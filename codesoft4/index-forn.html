@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"],
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<form id="orderForm">
+    <h2>Order Form</h2>
+    <label for="product">Product:</label>
+    <select id="product" name="product">
+        <option value="product1">shoes </option>
+        <option value="product2">watch</option>
+        <option value="product3">smart phone</option>
+        <option value="product1">blanket </option>
+        <option value="product2">dinners set</option>
+        <option value="product3">laptop</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your Name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your Email">
+
+    <button type="submit">Place Order</button>
+</form>
+
+<script>
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        var product = document.getElementById("product").value;
+        var quantity = document.getElementById("quantity").value;
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+
+        // You can perform validation here if needed
+
+        // Display order details
+        alert("Order Details:\nProduct: " + product + "\nQuantity: " + quantity + "\nName: " + name + "\nEmail: " + email);
+
+        // You can send the form data to a server for further processing (not implemented in this example)
+    });
+</script>
+
+</body>
+</html>
